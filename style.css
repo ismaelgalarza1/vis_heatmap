@@ -7,5 +7,16 @@ body{
     padding-top: 5%;
 }
 svg{
-    background-color: wheat;
+    background-color: white;
+}
+
+#tooltip{
+    visibility: hidden;
+    height: auto;
+    width: auto;
+}
+
+#legend {
+    display: flex;
+    flex-direction: row;
 }
