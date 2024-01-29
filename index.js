@@ -44,6 +44,28 @@ let createCells = () => {
         .enter()
         .append('rect')
         .attr('class', 'cell')
+        .attr('fill',(items) => {
+            variance = items['variance']
+            if (variance <= -1 ){
+                return 'SteelBlue'
+            }else if (variance <= 0 ){
+                return 'LightSteelBlue'
+            }else if ( variance <= 1 ){
+                return 'Orange'
+            }else {
+                return 'Cirmson'
+            }
+        } )
+        .attr('data-year', (items) => {
+            return items
+        })
+        .attr('data-month', (items)=> {
+            return items
+        })
+        .attr('data-temp', (items)=> {
+            return items
+        })
+
 }
 let createAxis = () => {
     let xAxis = d3.axisBottom(xScale)
@@ -61,7 +83,7 @@ let createAxis = () => {
 
 }
 
-
+ 
 //call the api
 
 req.open('GET', url, true)
